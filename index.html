@@ -1,1 +1,337 @@
-<h1>Hello!</h1>
+
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QXEE17ZF5T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QXEE17ZF5T');
+    </script>
+
+    <title>Predictive Red Teaming: Breaking Policies Without Breaking Robots</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <meta name="description" content="Predictive Red Teaming: Breaking Policies Without Breaking Robots">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+        <!--FACEBOOK-->
+    <!-- <meta property="og:image" content="https://robot-help.github.io/img/share_image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="682">
+    <meta property="og:image:height" content="682">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://robot-help.github.io/"/>
+    <meta property="og:title" content="Robots That Ask For Help" />
+    <meta property="og:description" content="Project page for Robots That Ask For Help: Uncertainty Alignment for Large Language Model Planners." /> -->
+
+        <!--TWITTER-->
+    <!-- <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Robots That Ask For Help" />
+    <meta name="twitter:description" content="Project page for Robots That Ask For Help: Uncertainty Alignment for Large Language Model Planners." />
+    <meta name="twitter:image" content="https://robot-help.github.io/img/share_image.png" /> -->
+
+<!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" href="img/seal_icon.png"> -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    
+    <script src="js/app.js"></script>
+	
+    <style>
+        .nav-pills {
+          position: relative;
+          display: inline;
+        }
+        .imtip {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main">
+        <div class="row mt-4">
+            <h2 class="col-md-12 text-center">
+                <b><font size="+6">Predictive Red Teaming</font></b>: </br> Breaking Policies Without Breaking Robots </br> 
+            </h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                <br>
+                <li><a href="//irom-lab.princeton.edu/majumdar/">Anirudha Majumdar</a></li>
+                <li><a href="https://scholar.google.co.in/citations?user=FBVwO5wAAAAJ&hl=en">Mohit Sharma</a></li>
+                <li><a href="https://scholar.google.com/citations?user=2DBmo-wAAAAJ&hl=en">Dmitry Kalashnikov</a></li>
+                <li><a href="https://research.google/people/sumeetsingh/?&type=google">Sumeet Singh</a></li>
+                <li><a href="https://sermanet.github.io/">Pierre Sermanet</a></li>
+                <li><a href="https://vikas.sindhwani.org/">Vikas Sindhwani</a></li>
+                <br>
+                <br>
+                    <a href="https://www.deepmind.com/">
+                        <image src="images/google-deepmind-logo.png" height="35px"> 
+                        <!-- Google DeepMind -->
+                    </a>
+                    &nbsp&nbsp&nbsp
+                    <a href="https://www.princeton.edu/">
+                        <image src="images/PU1line.svg" height="55px"> 
+                        <!-- Princeton University                        -->
+                    </a>
+                </ul>
+            </div>
+            <!-- <div class="col-md-12 text-center">
+                <h4>CoRL 2023, Best Student Paper</h4>
+            </div> -->
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-2 text-center">
+                <a href="https://arxiv.org/abs/2307.01928">
+                <image src="images/paper_thumbnail.png" height="70px">
+                <h4><strong>Paper</strong></h4>
+                <!-- <h6>Paper</h6> -->
+                </a>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-12">
+                <video id="v0" width="100%" preload="metadata" playsinline muted loop autoplay>
+                    <source src="videos/anchor_website_compressed.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-10 col-lg-8">
+                <h3 class="mt-4 mb-2">
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Visuomotor policies trained via imitation learning are capable of performing challenging manipulation tasks, but are often extremely brittle to lighting, visual distractors, and object locations. These vulnerabilities can depend unpredictably on the specifics of training, and are challenging to expose without time-consuming and expensive hardware evaluations. We propose the problem of predictive red teaming: discovering vulnerabilities of a policy with respect to environmental factors, and predicting the corresponding performance degradation without hardware evaluations in off-nominal scenarios. In order to achieve this, we develop RoboART: an automated red teaming (ART) pipeline that (1) modifies nominal observations using generative image editing to vary different environmental factors, and (2) predicts performance under each variation using a policy-specific anomaly detector executed on edited observations. Experiments across 500+ hardware trials in twelve off-nominal conditions for visuomotor diffusion policies demonstrate that RoboART predicts performance degradation with high accuracy (less than 0.19 average difference between predicted and real success rates). We also demonstrate how predictive red teaming enables targeted data collection: fine-tuning with data collected under conditions predicted to be adverse boosts baseline performance by 2--7x.
+                </p>
+                <div class="col-md-12">
+                    <video id="v0" width="100%" preload="metadata" playsinline muted controls>
+                        <source src="videos/predictive_red_teaming.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-8">
+                <br>
+                <h3>
+                    Predictive Red Teaming
+                </h3>
+                <p class="text-justify">
+                    We introduce the problem of <strong>predictive red teaming</strong>: discovering vulnerabilities of a given robot policy with respect to changes in environmental factors, and predicting the (relative or absolute) degradation in performance without performing hardware evaluations in off-nominal scenarios.
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-8">
+                <h3>
+                    Approach
+                </h3>
+                <p class="text-justify">
+                    We introduce <strong>RoboART (Robotics Auto-Red-Teaming)</strong>: a method for predictive red teaming using generative image editing and anomaly detection. We focus on visuomotor policies that rely primarily on RGB image observations. Our approach has two main steps. First, we use generative image editing tools to modify nominal observations to reflect changes in various factors of interest (e.g., background, lighting, distractor objects). For each factor, we then predict the performance degradation of the policy using anomaly detection. We describe each of these steps below.
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center mt-4">
+            <div class="col-md-10 col-lg-8">
+                <h4>Step 1: Generative Image Editing</h4>
+                <p class="text-justify">
+                    First, we use automated image editing tools (<a href="https://deepmind.google/technologies/imagen-3/">Imagen 3</a>) to modify a set of nominal RGB observations by varying different factors of interest in a fine-grained and realistic manner via language instructions (e.g., “add a person close to the table”). Explore different types of edits below. 
+                
+                <div class="card mb-4 mt-4 text-dark bg-light">
+                    <h5 class="card-header">Examples of edits</h5>
+                    <div class="card-body">
+                        <p>Choose an edit instruction:</p>
+                        <select class="form-select" size="8" aria-label="size 5 select example" onchange="updateImage(this)">
+                            <option value="edit_1">1) Nominal observations (overhead and wrist cams)</option>
+                            <option value="edit_2">2) Add a person by the table</option>
+                            <option value="edit_3">3) Change the background to green</option>
+                            <option value="edit_4">4) Change the background to red</option>
+                            <option value="edit_5">5) Change the background to blue</option>
+                            <option value="edit_6">6) Add a black trash can</option>
+                            <option value="edit_7">7) Add a white trash can</option>
+                            <option value="edit_8">8) Add a candle</option>
+                            <option value="edit_9">9) Add a laptop</option>
+                            <option value="edit_10">10) Change the lighting to red</option>
+                            <option value="edit_11">11) Change the lighting to green</option>
+                            <option value="edit_12">12) Change the lighting to blue</option>
+                            <option value="edit_13">13) Change the table height</option>
+                        </select>
+        
+                        <!-- Image content corresponding to each edit -->
+                        <div id="image_edit_1" class="edit_image" style="display:block;">
+                            <img src="images/edit_nominal.png" width="100%" alt="Nominal Observations">
+                        </div>
+                        <div id="image_edit_2" class="edit_image" style="display:none;">
+                            <img src="images/edit_person.png" width="100%" alt="Add a person by the table">
+                        </div>
+                        <div id="image_edit_3" class="edit_image" style="display:none;">
+                            <img src="images/edit_background_green.png" width="100%" alt="Change the background to green">
+                        </div>
+                        <div id="image_edit_4" class="edit_image" style="display:none;">
+                            <img src="images/edit_background_red.png" width="100%" alt="Change the background to red">
+                        </div>
+                        <div id="image_edit_5" class="edit_image" style="display:none;">
+                            <img src="images/edit_background_blue.png" width="100%" alt="Change the background to blue">
+                        </div>
+                        <div id="image_edit_6" class="edit_image" style="display:none;">
+                            <img src="images/edit_black_trashcan.png" width="100%" alt="Add a black trash can">
+                        </div>
+                        <div id="image_edit_7" class="edit_image" style="display:none;">
+                            <img src="images/edit_white_trashcan.png" width="100%" alt="Add a white trash can">
+                        </div>
+                        <div id="image_edit_8" class="edit_image" style="display:none;">
+                            <img src="images/edit_candle.png" width="100%" alt="Add a candle">
+                        </div>
+                        <div id="image_edit_9" class="edit_image" style="display:none;">
+                            <img src="images/edit_laptop.png" width="100%" alt="Add a laptop">
+                        </div>
+                        <div id="image_edit_10" class="edit_image" style="display:none;">
+                            <img src="images/edit_lighting_red.png" width="100%" alt="Change the lighting to red">
+                        </div>
+                        <div id="image_edit_11" class="edit_image" style="display:none;">
+                            <img src="images/edit_lighting_green.png" width="100%" alt="Change the lighting to green">
+                        </div>
+                        <div id="image_edit_12" class="edit_image" style="display:none;">
+                            <img src="images/edit_lighting_blue.png" width="100%" alt="Change the lighting to blue">
+                        </div>
+                        <div id="image_edit_13" class="edit_image" style="display:none;">
+                            <img src="images/edit_table_height.png" width="100%" alt="Change the table height">
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            function updateImage(selectElement) {
+                // Hide all images
+                let allImages = document.querySelectorAll('.edit_image');
+                allImages.forEach(function(image) {
+                    image.style.display = 'none';
+                });
+        
+                // Show the selected image
+                let selectedOption = selectElement.value;
+                let selectedImageDiv = document.getElementById('image_' + selectedOption);
+                selectedImageDiv.style.display = 'block';
+            }
+        </script>
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-8">
+                <h4>
+                    Step 2: Predict Performance
+                </h4>
+                <p class="text-justify">
+                    The second step is to predict the degradation in performance induced by each environmental factor using <i>anomaly detection</i>. Specifically, we find that a simple anomaly detector that computes distances in policy embedding space between edited observations and a set of nominal observations (with an anomaly threshold computed using conformal prediction) is surprisingly predictive of both relative and absolute performance degradation.
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-8">
+                <h3>
+                    Experiments
+                </h3>
+                <div class="col-md-12">
+                    <video id="v0" width="100%" preload="metadata" playsinline muted loop autoplay>
+                        <source src="videos/hardware_clips_compressed.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <p class="text-justify">
+                    We evaluated RoboART using 500+ hardware experiments that vary twelve environmental factors for two visuomotor diffusion policies with significantly different architectures.
+                </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-8">
+                <h3>
+                    Results
+                </h3>
+                <p class="text-justify">
+                    We find that RoboART predicts performance degradation with a high degree of accuracy. The figure below evaluates predictions made by RoboART for a policy that combines diffusion with trajectory optimization (left: rankings of environmental factors by performance degradation, and right: absolute success rates). Predictions are compared to the true rankings and success rates as measured by 20+ hardware evaluations for each factor. RoboART correctly predicts that a changed table height will degrade performance significantly more than a human distractor. The Spearman rank correlation between predicted and real ranks is <strong>0.8</strong>. The difference between predicted and real success rates averaged across the twelve factors is <strong>0.1</strong> (and 0.19 for another diffusion policy we test; see paper). 
+                
+                    <p style="text-align:center;">
+                        <image src="images/prediction_results_hybrid.png" width="100%">
+                    </p>
+                </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-8">
+                <h3>
+                    Targeted Data Collection
+                </h3>
+                <div class="col-md-12">
+                    <video id="v0" width="100%" preload="metadata" playsinline muted loop autoplay>
+                        <source src="videos/finetuning_clip_compressed.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <p class="text-justify">
+                    We demonstrate
+the utility of predictive red teaming for <i>targeted data collection</i>: by co-finetuning the policy with data collected in the three conditions predicted to be the most adverse, performance is boosted in these
+conditions by 2--7x. Moreover, targeted data collection also
+yields <i>cross-domain generalization</i>: the performance of the
+policy is improved by 2--5x even for conditions where we
+did not collect data.
+                <p style="text-align:center;">
+                    <image src="images/finetuning.png" width="80%">
+                </p>
+                </div>
+        </div>
+
+        <!-- <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-8">
+                <h3>
+                    Citation 
+                </h3>
+                <a href="https://arxiv.org/abs/2307.01928">[arxiv version]</a>
+                <div class="form-group col-md-12">
+                    <textarea id="bibtex" class="form-control" rows="8" readonly>
+@inproceedings{knowno2023,
+    title={Robots That Ask For Help: Uncertainty Alignment for Large Language Model Planners},
+    author={Ren, Allen Z. and Dixit, Anushri and Bodrova, Alexandra and Singh, Sumeet and Tu, Stephen and Brown, Noah and Xu, Peng and Takayama, Leila and Xia, Fei and Varley, Jake and Xu, Zhenjia and Sadigh, Dorsa and Zeng, Andy and Majumdar, Anirudha},
+    booktitle={Proceedings of the Conference on Robot Learning (CoRL)},
+    year={2023}
+}</textarea>
+                </div>
+            </div>
+        </div> -->
+        <div class="row justify-content-md-center mt-4">
+            <div class="col-md-10 col-lg-8">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                    We would like to thank Gabriela Taras, Lama Yassine, Aigerim Kdyrgali, Khaled Hussein, Zac Gong, Rajash Budhoo, and Chad Bodoo for help with hardware experiments. We are also grateful to Shixin Luo and Suraj Kothawade for extremely helpful pointers on the image editing pipeline. We thank Dave Orr, Anca Dragan, and Vincent Vanhoucke for continuous guidance on safety-related topics; and Frankie Garcia and Dawn Bloxwich on responsible development. The website template is modified from <a href="https://code-as-policies.github.io/">Code as Policies</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
