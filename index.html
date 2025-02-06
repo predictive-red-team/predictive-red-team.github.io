@@ -141,7 +141,7 @@
                     Predictive Red Teaming
                 </h3>
                 <p class="text-justify">
-                    We introduce the problem of <strong>predictive red teaming</strong>: discovering vulnerabilities of a given robot policy with respect to changes in environmental factors, and predicting the (relative or absolute) degradation in performance without performing hardware evaluations in off-nominal scenarios.
+                    We introduce the problem of <strong>predictive red teaming</strong>: discovering vulnerabilities of a given robot policy with respect to changes in environmental factors, and predicting the (relative or absolute) degradation in performance <i>without performing hardware evaluations</i> in off-nominal scenarios.
             </div>
         </div>
 
@@ -170,15 +170,15 @@
                             <option value="edit_2">2) Add a person by the table</option>
                             <option value="edit_3">3) Change the background to green</option>
                             <option value="edit_4">4) Change the background to red</option>
-                            <option value="edit_5">5) Change the background to blue</option>
-                            <option value="edit_6">6) Add a black trash can</option>
-                            <option value="edit_7">7) Add a white trash can</option>
-                            <option value="edit_8">8) Add a candle</option>
-                            <option value="edit_9">9) Add a laptop</option>
-                            <option value="edit_10">10) Change the lighting to red</option>
-                            <option value="edit_11">11) Change the lighting to green</option>
-                            <option value="edit_12">12) Change the lighting to blue</option>
-                            <option value="edit_13">13) Change the table height</option>
+                            <!-- <option value="edit_5">5) Change the background to blue</option> -->
+                            <option value="edit_6">5) Add a black trash can</option>
+                            <option value="edit_7">6) Add a white trash can</option>
+                            <option value="edit_8">7) Add a candle</option>
+                            <option value="edit_9">8) Add a laptop</option>
+                            <option value="edit_10">9) Change the lighting to red</option>
+                            <option value="edit_11">10) Change the lighting to green</option>
+                            <option value="edit_12">11) Change the lighting to blue</option>
+                            <option value="edit_13">12) Change the table height</option>
                         </select>
         
                         <!-- Image content corresponding to each edit -->
@@ -194,9 +194,9 @@
                         <div id="image_edit_4" class="edit_image" style="display:none;">
                             <img src="images/edit_background_red.png" width="100%" alt="Change the background to red">
                         </div>
-                        <div id="image_edit_5" class="edit_image" style="display:none;">
+                        <!-- <div id="image_edit_5" class="edit_image" style="display:none;">
                             <img src="images/edit_background_blue.png" width="100%" alt="Change the background to blue">
-                        </div>
+                        </div> -->
                         <div id="image_edit_6" class="edit_image" style="display:none;">
                             <img src="images/edit_black_trashcan.png" width="100%" alt="Add a black trash can">
                         </div>
@@ -247,7 +247,7 @@
                     Step 2: Predict Performance
                 </h4>
                 <p class="text-justify">
-                    The second step is to predict the degradation in performance induced by each environmental factor using <i>anomaly detection</i>. Specifically, we find that a simple anomaly detector that computes distances in policy embedding space between edited observations and a set of nominal observations (with an anomaly threshold computed using conformal prediction) is surprisingly predictive of both relative and absolute performance degradation.
+                    The second step is to predict the degradation in performance induced by each environmental factor using <i>anomaly detection</i>. We find that a simple anomaly detector that computes distances in policy embedding space between edited observations and a set of nominal observations (with an anomaly threshold computed using conformal prediction) is surprisingly predictive of both relative and absolute performance degradation. Specifically, we predict the success rate for a given environmental factor as 1 - anomaly rate (computed on edited observations for that factor).
             </div>
         </div>
 
@@ -272,7 +272,7 @@
                     Results
                 </h3>
                 <p class="text-justify">
-                    We find that RoboART predicts performance degradation with a high degree of accuracy. The figure below evaluates predictions made by RoboART for a policy that combines diffusion with trajectory optimization (left: rankings of environmental factors by performance degradation, and right: absolute success rates). Predictions are compared to the true rankings and success rates as measured by 20+ hardware evaluations for each factor. RoboART correctly predicts that a changed table height will degrade performance significantly more than a human distractor. The Spearman rank correlation between predicted and real ranks is <strong>0.8</strong>. The difference between predicted and real success rates averaged across the twelve factors is <strong>0.1</strong> (and 0.19 for another diffusion policy we test; see paper). 
+                    We find that RoboART predicts performance degradation with a high degree of accuracy. The figure below evaluates predictions made by RoboART for a policy that combines diffusion with trajectory optimization (left: rankings of environmental factors by performance degradation, and right: absolute success rates). Predictions are compared to the true rankings and success rates as measured by 20+ hardware evaluations for each factor. RoboART correctly predicts that changing the table height will degrade performance significantly, changing the background and lighting will degrade performance moderately, and adding distractors will induce a mild degradation. The <a href="https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient">Spearman rank correlation</a> between predicted and real ranks is <strong>0.8</strong>. The difference between predicted and real success rates averaged across the twelve factors is <strong>0.1</strong>.
                 
                     <p style="text-align:center;">
                         <image src="images/prediction_results_hybrid.png" width="100%">
@@ -326,7 +326,8 @@ did not collect data.
                     Acknowledgements
                 </h3>
                 <p class="text-justify">
-                    We would like to thank Gabriela Taras, Lama Yassine, Aigerim Kdyrgali, Khaled Hussein, Zac Gong, Rajash Budhoo, and Chad Bodoo for help with hardware experiments. We are also grateful to Shixin Luo and Suraj Kothawade for extremely helpful pointers on the image editing pipeline. We thank Dave Orr, Anca Dragan, and Vincent Vanhoucke for continuous guidance on safety-related topics; and Frankie Garcia and Dawn Bloxwich on responsible development. The website template is modified from <a href="https://code-as-policies.github.io/">Code as Policies</a>.
+                    <!-- We would like to thank Gabriela Taras, Lama Yassine, Aigerim Kdyrgali, Khaled Hussein, Zac Gong, Rajash Budhoo, and Chad Bodoo for help with hardware experiments.  -->
+                    We are grateful to Shixin Luo and Suraj Kothawade for extremely helpful pointers on the image editing pipeline. We thank Alex Irpan for insightful feedback on an early version of the paper. We are grateful to Dave Orr, Anca Dragan, and Vincent Vanhoucke for continuous guidance on safety-related topics; and Frankie Garcia and Dawn Bloxwich on responsible development. The website template is modified from <a href="https://code-as-policies.github.io/">Code as Policies</a>.
                 </p>
             </div>
         </div>
